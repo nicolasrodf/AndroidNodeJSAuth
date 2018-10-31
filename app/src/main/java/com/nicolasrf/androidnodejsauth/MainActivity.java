@@ -90,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
                         dialog.dismiss();
                     }
                 })
+                .setPositiveText("Register")
                 .onPositive(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
@@ -101,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                         .subscribe(new Consumer<String>() {
                             @Override
                             public void accept(String s) throws Exception {
-                                Toast.makeText(MainActivity.this, "Error: " +s, Toast.LENGTH_SHORT).show(); //Just show error From API
+                                Toast.makeText(MainActivity.this, "" +s, Toast.LENGTH_SHORT).show(); //Just show error From API
                             }
                         }));
                     }
