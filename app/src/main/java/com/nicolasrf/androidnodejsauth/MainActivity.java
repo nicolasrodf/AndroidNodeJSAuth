@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                         .subscribe(new Consumer<String>() {
                             @Override
                             public void accept(String s) throws Exception {
-                                Toast.makeText(MainActivity.this, "" +s, Toast.LENGTH_SHORT).show(); //Just show error From API
+                                Toast.makeText(MainActivity.this, "" +s, Toast.LENGTH_SHORT).show(); //Just show error From API (if be)
                             }
                         }));
                     }
@@ -116,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
         .subscribe(new Consumer<String>() {
             @Override
             public void accept(String s) throws Exception {
+                //Si el JSON String devuelto contiene encrypted_password quiere decir que se ha obtenido el user correctamente desde la DB
                 if(s.contains("encrypted_password"))
                     Toast.makeText(MainActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
                 else
